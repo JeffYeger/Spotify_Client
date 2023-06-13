@@ -2,5 +2,13 @@
     color: white;
     height: 92px;
     width: 100vw;
-   background-color: blue;
+   /* background-color: blue; */
+   background-image: linear-gradient(black,teal);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+h2{
+   text-shadow: 2px 4px 4px black;
 }

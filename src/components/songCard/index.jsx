@@ -19,7 +19,7 @@ const togglePopup = ()=>{
 <img className={styles.thumbnail} src={props.video.thumbnail.url} alt="" />
   Title: {props.video.title}
   <br />
-  Duration: {props.video.duration_formatted}
+   ({props.video.duration_formatted})
 
 
   <button onClick={togglePopup}>Play</button>

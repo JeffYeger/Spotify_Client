@@ -51,15 +51,22 @@ function Home() {
 
   return <div className={styles.home}>
 
+<div className={styles.search}>
      <form>
       <input onChange={handleChange} type="search" placeholder="Search for your favorite artist" />
-      <button onClick={handleSubmit}>Search</button>
+      <button className={styles.searchbutton} onClick={handleSubmit}>Search</button>
     </form>
-      
 
-      <h2>Showing songs from {search}</h2>
+    
+    </div>
+    
+    <div className={styles.titletext}>   <h2 className={styles.basictext}>Showing songs from {search}</h2> </div>
  
+      
+  
 <div className={styles.video_container}>
+
+
   {videos.map((video)=>{
     // return <SongCard title = {video.title} duration = {video.duration_formatted}/>
     return <SongCard video = {video}/>
