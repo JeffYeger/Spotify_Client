@@ -1,16 +1,18 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import Layout from './layout'
+import PlayerContext from './PlayerContext'
 
 function App() {
   const [count, setCount] = useState(0)
+  const [videoId, setVideoId] = useState("")
 
   return (
-   <div>
-    <Layout/>
-   </div>
+    <PlayerContext.Provider value={{ count, setCount, videoId, setVideoId }}>
+      <div>
+        <Layout/>
+      </div>
+    </PlayerContext.Provider>
   )
 }
 

@@ -1,7 +1,6 @@
 .body{
     height: 100%;
     width:100%;
-    /* background-color: green; */
-    background-image: linear-gradient(black,teal);
+    background-image: linear-gradient(45deg, black,teal);
     
 }

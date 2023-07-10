@@ -1,9 +1,12 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import styles from './styles.module.css'
 import Popup from '../mainComponents/popup'
 import '../mainComponents/popup/popup.css'
+import PlayerContext from '../../PlayerContext'
 
 function SongCard(props) {
+
+const {setVideoId} = useContext(PlayerContext)
 
 const [showPopup,setShowPopup] = useState(false)
 
@@ -22,7 +25,8 @@ const togglePopup = ()=>{
    ({props.video.duration_formatted})
 
 
-  <button onClick={togglePopup}>Play</button>
+  <button style={{backgroundColor:'rgb(95, 95, 95)', color:"white"}} onClick={() => setVideoId(props.video.id)}
+      >Play</button>
   
   <Popup show = {showPopup}  onClose={togglePopup}>
     <div className={styles.embed}>

@@ -5,6 +5,7 @@ import Favorites from '../../pages/favorites'
 import Playlists from '../../pages/playlist'
 import Home from '../../pages/home'
 import Login from '../../pages/login'
+import Register from '../../pages/register'
 
 function Body() {
   return (
@@ -14,6 +15,7 @@ function Body() {
     <Route path = '/' element = {<Home/>}/>
     <Route path = '/favorites' element = {<Favorites/>}/>
     <Route path = '/login' element = {<Login/>}/>
+    <Route path = '/register' element = {<Register/>}/>
     <Route path = '/playlists' element = {<Playlists/>}/>
     </Routes>
 
