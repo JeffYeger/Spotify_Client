@@ -5,10 +5,11 @@ import PlayerContext from './PlayerContext'
 
 function App() {
   const [count, setCount] = useState(0)
-  const [videoId, setVideoId] = useState("")
+  const [videoDetails, setVideoDetails] = useState("")
+  const [saveSong,setSaveSong] = useState ()
 
   return (
-    <PlayerContext.Provider value={{ count, setCount, videoId, setVideoId }}>
+    <PlayerContext.Provider value={{ count, setCount, videoDetails, setVideoDetails, saveSong,setSaveSong }}>
       <div>
         <Layout/>
       </div>

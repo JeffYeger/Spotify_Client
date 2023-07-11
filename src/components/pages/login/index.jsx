@@ -17,7 +17,8 @@ function Login() {
 const handleSubmit = async (e) => {
   e.preventDefault()
   await axios.post('http://localhost:1001/user/login',loginData)
-  .then((res)=> navigate('/'))
+  .then ((res)=>{
+    localStorage.setItem("Token", res.token),res.user},navigate('/'))
   .catch((err)=> console.log (err))
 }
 

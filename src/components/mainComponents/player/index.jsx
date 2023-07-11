@@ -5,19 +5,20 @@ import PlayerContext from '../../../PlayerContext';
 import {FaPlay, FaPause} from "react-icons/fa"
 import {TbPlayerTrackNextFilled, TbPlayerTrackPrevFilled} from "react-icons/tb"
 import {AiOutlineHeart, AiFillHeart} from "react-icons/ai"
+import axios from 'axios'
 
 const VideoPlayer = () => {
-  const { videoId } = useContext(PlayerContext);
+  const { videoDetails } = useContext(PlayerContext);
   const playerRef = useRef(null);
   const [playerReady, setPlayerReady] = useState(false);
   const [favorite,setFavorite] = useState(false)
 
   useEffect(() => {
-    if (playerReady && videoId) {
+    if (playerReady && videoDetails.id) {
       playerRef.current?.seekTo(0); // Seek to the beginning of the video
       playerRef.current?.getInternalPlayer().playVideo();
     }
-  }, [playerReady, videoId]);
+  }, [playerReady, videoDetails.id]);
 
   const handlePlay = () => {
     if (playerReady) {
@@ -65,6 +66,16 @@ const VideoPlayer = () => {
   
   const handleFavorite = ()=> {
     setFavorite(!favorite)
+    const data = {
+      "thumbnail": videoDetails.thumbnail,
+    "title": videoDetails.title,
+    "duration_formatted": videoDetails.duration_formatted,
+    "id": videoDetails.id,
+    "url": videoDetails.url
+  }
+    axios.post('http://localhost:1001/song/savesong',data)
+    .then ((res)=> console.log (res.data))
+    .catch ((err)=> console.log (err.message))
   }
   const handlePlayerReady = () => {
     setPlayerReady(true);
@@ -74,7 +85,7 @@ const VideoPlayer = () => {
     <div className={styles.player_container}>
       <ReactPlayer
         ref={playerRef}
-        url={`https://www.youtube.com/embed/${videoId}`}
+        url={`https://www.youtube.com/embed/${videoDetails.id}`}
         playing={playerReady} // Start playing when the player is ready
         onReady={handlePlayerReady} // Set playerReady state to true when the player is ready
         volume={1}

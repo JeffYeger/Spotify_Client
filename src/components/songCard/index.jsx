@@ -6,7 +6,7 @@ import PlayerContext from '../../PlayerContext'
 
 function SongCard(props) {
 
-const {setVideoId} = useContext(PlayerContext)
+const {setVideoDetails} = useContext(PlayerContext)
 
 const [showPopup,setShowPopup] = useState(false)
 
@@ -25,7 +25,7 @@ const togglePopup = ()=>{
    ({props.video.duration_formatted})
 
 
-  <button style={{backgroundColor:'rgb(95, 95, 95)', color:"white"}} onClick={() => setVideoId(props.video.id)}
+  <button style={{backgroundColor:'rgb(95, 95, 95)', color:"white"}} onClick={() => setVideoDetails(props.video)}
       >Play</button>
   
   <Popup show = {showPopup}  onClose={togglePopup}>
