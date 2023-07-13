@@ -2,8 +2,11 @@ import React, { useState } from "react";
 import ReactPlayer from "react-player";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { useContext } from "react";
+import PlayerContext from "../../../PlayerContext";
 
 function Login() {
+  const {user,setUser} = useContext (PlayerContext)
   const [loginData, setLoginData] = useState({});
  const navigate = useNavigate()
 
@@ -14,13 +17,18 @@ function Login() {
     setLoginData((prevData) => ({ ...prevData, [name]: value }));
   });
 
-const handleSubmit = async (e) => {
-  e.preventDefault()
-  await axios.post('http://localhost:1001/user/login',loginData)
-  .then ((res)=>{
-    localStorage.setItem("Token", res.token),res.user},navigate('/'))
-  .catch((err)=> console.log (err))
-}
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    await axios.post('http://localhost:1001/user/login', loginData)
+      .then((res) => {
+        localStorage.setItem('token', res.data.token);
+        setUser(res.data.user);
+        navigate('/');
+      })
+      .catch((err) => console.log(err));
+  };
+
+  
 
   return (
     <div>

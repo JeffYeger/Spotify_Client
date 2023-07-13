@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import SongCard from "../../songCard";
 import styles from './styles.module.css'
+import {BsSearch} from 'react-icons/bs'
 
 function Home() {
 
@@ -68,7 +69,7 @@ function Home() {
 
 
   {videos.map((video)=>{
-    return <SongCard video = {video}/>
+    return <SongCard key = {video.id} video = {video}/>
   })}
 </div>
   </div>;

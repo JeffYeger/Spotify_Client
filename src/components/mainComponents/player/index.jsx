@@ -2,16 +2,16 @@ import React, { useContext, useRef, useEffect, useState } from 'react';
 import ReactPlayer from 'react-player';
 import styles from './styles.module.css';
 import PlayerContext from '../../../PlayerContext';
-import {FaPlay, FaPause} from "react-icons/fa"
-import {TbPlayerTrackNextFilled, TbPlayerTrackPrevFilled} from "react-icons/tb"
-import {AiOutlineHeart, AiFillHeart} from "react-icons/ai"
+import { FaPlay, FaPause } from "react-icons/fa"
+import { TbPlayerTrackNextFilled, TbPlayerTrackPrevFilled } from "react-icons/tb"
+import { AiOutlineHeart, AiFillHeart } from "react-icons/ai"
 import axios from 'axios'
 
 const VideoPlayer = () => {
   const { videoDetails } = useContext(PlayerContext);
   const playerRef = useRef(null);
   const [playerReady, setPlayerReady] = useState(false);
-  const [favorite,setFavorite] = useState(false)
+  const [favorite, setFavorite] = useState(false)
 
   useEffect(() => {
     if (playerReady && videoDetails.id) {
@@ -43,7 +43,7 @@ const VideoPlayer = () => {
     if (playerReady) {
       const currentTime = playerRef.current?.getCurrentTime();
       const duration = playerRef.current?.getDuration();
-      const newTime = currentTime + 10; 
+      const newTime = currentTime + 10;
       if (newTime <= duration) {
         playerRef.current?.seekTo(newTime);
       } else {
@@ -63,19 +63,19 @@ const VideoPlayer = () => {
       }
     }
   };
-  
-  const handleFavorite = ()=> {
+
+  const handleFavorite = () => {
     setFavorite(!favorite)
     const data = {
       "thumbnail": videoDetails.thumbnail,
-    "title": videoDetails.title,
-    "duration_formatted": videoDetails.duration_formatted,
-    "id": videoDetails.id,
-    "url": videoDetails.url
-  }
-    axios.post('http://localhost:1001/song/savesong',data)
-    .then ((res)=> console.log (res.data))
-    .catch ((err)=> console.log (err.message))
+      "title": videoDetails.title,
+      "duration_formatted": videoDetails.duration_formatted,
+      "id": videoDetails.id,
+      "url": videoDetails.url
+    }
+    axios.post('http://localhost:1001/song/savesong', data)
+      .then((res) => console.log(res.data))
+      .catch((err) => console.log(err.message))
   }
   const handlePlayerReady = () => {
     setPlayerReady(true);
@@ -93,12 +93,12 @@ const VideoPlayer = () => {
         height="100%"
       />
 
-      <div className= {styles.controls}>
-      <TbPlayerTrackPrevFilled  onClick = {handleRewind}/>
-        <FaPlay onClick={handlePlay}/>
-        <FaPause onClick={handlePause}/>
-        
-        <TbPlayerTrackNextFilled onClick = {handleFastForward} />
+      <div className={styles.controls}>
+        <TbPlayerTrackPrevFilled onClick={handleRewind} />
+        <FaPlay onClick={handlePlay} />
+        <FaPause onClick={handlePause} />
+
+        <TbPlayerTrackNextFilled onClick={handleFastForward} />
         <input
           type="range"
           min={0}
@@ -107,11 +107,11 @@ const VideoPlayer = () => {
           defaultValue={.8}
           onChange={handleVolumeChange}
         />
-     <div onClick={handleFavorite}>
-     {favorite == false?<AiOutlineHeart/> : <AiFillHeart/>} 
-     </div>
-       
-       
+        <div onClick={handleFavorite}>
+          {favorite == false ? <AiOutlineHeart /> : <AiFillHeart />}
+        </div>
+
+
       </div>
     </div>
   );

@@ -8,11 +8,11 @@ function SongCard(props) {
 
 const {setVideoDetails} = useContext(PlayerContext)
 
-const [showPopup,setShowPopup] = useState(false)
+// const [showPopup,setShowPopup] = useState(false)
 
-const togglePopup = ()=>{
-    setShowPopup(!showPopup)
-}
+// const togglePopup = ()=>{
+//     setShowPopup(!showPopup)
+// }
 
 
   return (
@@ -20,15 +20,16 @@ const togglePopup = ()=>{
    {/* <h4>Title:</h4> {props.title}
   <h4>Duration:</h4>  {props.duration} */}
 <img className={styles.thumbnail} src={props.video.thumbnail.url} alt="" />
-  Title: {props.video.title}
-  <br />
+<div className={styles.title}>  Title: {props.video.title}</div>
+
+  {/* <br /> */}
    ({props.video.duration_formatted})
 
 
   <button style={{backgroundColor:'rgb(95, 95, 95)', color:"white"}} onClick={() => setVideoDetails(props.video)}
       >Play</button>
   
-  <Popup show = {showPopup}  onClose={togglePopup}>
+  {/* <Popup show = {showPopup}  onClose={togglePopup}>
     <div className={styles.embed}>
     <h4>Title: {props.video.title}</h4>
     <h4>Views: {props.video.views.toLocaleString()}</h4>
@@ -48,7 +49,7 @@ const togglePopup = ()=>{
     <button>Add to Favorites</button>
     </div>
   </Popup>
-    
+     */}
     </div>
   )
 }
