@@ -3,3 +3,12 @@
     width: 100vw;
     height: 100vh;
 }
+
+.player{
+    max-width: 320px;
+    color: white;
+    position: fixed;
+    display: flex;
+    bottom: 5%;
+    /* border: solid 3px yellow; */
+}

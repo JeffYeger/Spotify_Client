@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 import styles from './styles.module.css'
-import Popup from '../mainComponents/popup'
-import '../mainComponents/popup/popup.css'
+// import Popup from '../mainComponents/popup'
+// import '../mainComponents/popup/popup.css'
 import PlayerContext from '../../PlayerContext'
 
 function SongCard(props) {

@@ -1,4 +1,4 @@
-.songcard {
+.playlistCard {
     border-radius: 5px;
     display: flex;
     flex-direction: column;
@@ -11,6 +11,7 @@
     font-size: 1rem;
     /* background-color: rgb(1, 108, 108); */
     background-color: rgba(1, 135, 135, 0.5);
+  
   }
   
   .thumbnail {

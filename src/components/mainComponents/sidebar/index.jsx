@@ -18,7 +18,7 @@ function Sidebar() {
         <Link className={styles.linktext} to='/register'>Register</Link>
   
     
-      <div className={styles.player}> <VideoPlayer /> </div>
+      {/* <div className={styles.player}> <VideoPlayer /> </div> */}
 
     </div>
 

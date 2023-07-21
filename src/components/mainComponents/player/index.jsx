@@ -73,8 +73,10 @@ const VideoPlayer = () => {
       "id": videoDetails.id,
       "url": videoDetails.url
     }
-    axios.post('http://localhost:1001/song/savesong', data)
-      .then((res) => console.log(res.data))
+    console.log (data)
+    axios.post('http://localhost:1001/song/addfavorite',data,{headers: {authorization: "Bearer " + localStorage.getItem('token')}},
+ )
+      .then((res) => console.log("!!!!" , res, "!!!!"))
       .catch((err) => console.log(err.message))
   }
   const handlePlayerReady = () => {
@@ -104,7 +106,7 @@ const VideoPlayer = () => {
           min={0}
           max={1}
           step={0.1}
-          defaultValue={.8}
+          defaultValue={.3}
           onChange={handleVolumeChange}
         />
         <div onClick={handleFavorite}>

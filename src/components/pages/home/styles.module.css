@@ -30,6 +30,7 @@ input[type="search"] {
     margin-top: 10px;
     width: 20rem;
     text-align: center;
+    font-size: larger;
   }
 
   .basictext{
@@ -42,6 +43,7 @@ input[type="search"] {
    /* padding-top: 2rem; */
    /* border: solid yellow 10px; */
    margin-top: 10px;
+
   }
 
   .searchbutton{
@@ -59,7 +61,17 @@ input[type="search"] {
 
 
   @media screen and (max-width: 500px) {
-   
+   .searchbutton{
+    margin-top: 10px;
+    border: solid 1px rgb(170, 170, 170);
+    scale: 1.4;
+    font-weight: 300;
+    padding: 2px;
+   }
+   input[type="search"]{
+    width:16rem;
+    margin-bottom: 5px;
+   }
       
     }
   

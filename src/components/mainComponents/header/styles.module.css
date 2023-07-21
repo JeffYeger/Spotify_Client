@@ -2,8 +2,11 @@
     color: white;
     height: 92px;
     width: 100vw;
-   /* background-color: blue; */
-   background-image: linear-gradient(black,teal);
+   background-color: black;
+   /* background-image: linear-gradient(black,teal); */
+   border: solid 1px rgb(148, 148, 148,0.3);
+
+
    display: flex;
    align-items: center;
    justify-content: center;
@@ -12,3 +15,5 @@
 h1{
    text-shadow: 2px 4px 4px teal;
 }
+
+

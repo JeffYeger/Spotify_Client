@@ -4,14 +4,15 @@ import Layout from './layout'
 import PlayerContext from './PlayerContext'
 
 function App() {
-  const [count, setCount] = useState(0)
   const [videoDetails, setVideoDetails] = useState("")
   const [saveSong,setSaveSong] = useState ()
   const [user,setUser] = useState ()
-  console.log (user)
+  const [favorites,setFavorites] = useState ([])
+  const [playlists,setPlaylists] = useState ([])
+
 
   return (
-    <PlayerContext.Provider value={{ count, setCount, videoDetails, setVideoDetails, saveSong,setSaveSong,user,setUser }}>
+    <PlayerContext.Provider value={{playlists,setPlaylists, videoDetails, setVideoDetails, saveSong,setSaveSong,user,setUser,favorites,setFavorites }}>
       <div>
         <Layout/>
       </div>

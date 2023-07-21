@@ -32,7 +32,7 @@ function Home() {
       })
       .catch((error) => console.log(error));
   }, []);
-  console.log(videos);
+  ;
 
   const handleChange = (e)=>{
     setSearch(e.target.value)

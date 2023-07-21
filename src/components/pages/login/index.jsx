@@ -21,7 +21,7 @@ function Login() {
     e.preventDefault();
     await axios.post('http://localhost:1001/user/login', loginData)
       .then((res) => {
-        localStorage.setItem('token', res.data.token);
+        localStorage.setItem('Token', res.data.token);
         setUser(res.data.user);
         navigate('/');
       })
