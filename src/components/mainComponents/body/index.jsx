@@ -8,6 +8,7 @@ import Login from '../../pages/login'
 import Register from '../../pages/register'
 import VideoPlayer from '../player'
 import PlaylistCard from '../../PlaylistCard'
+import PlaylistDisplay from '../../pages/playlistDisplay'
 
 function Body() {
   return (
@@ -19,6 +20,7 @@ function Body() {
     <Route path = '/login' element = {<Login/>}/>
     <Route path = '/register' element = {<Register/>}/>
     <Route path = '/playlists' element = {<Playlists/>}/>
+    <Route path = '/playlists/:name' element = {<PlaylistDisplay/>}/>
     {/* <Route path = '/playlists' element = {<PlaylistCard/>}/> */}
     </Routes>
 

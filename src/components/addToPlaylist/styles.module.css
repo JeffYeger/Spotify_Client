@@ -1,0 +1,32 @@
+.dropdown_menu{
+max-width: 200px;
+ background-color: white;
+border-radius: 10px;
+ position: absolute;
+
+ color: rgb(109, 97, 97);
+
+}
+.dropdown{
+color: black;
+width: 100%;
+height: 100%;
+border: 5px solid blue;
+}
+
+.dropdown_menu ul {
+    margin: 15px;
+    display: flex;
+    list-style: none;
+    flex-direction: column;
+    gap: 5px;
+border-top: 1px solid rgb(217, 215, 215);
+    font-size: larger;
+    font-weight: 500;
+}
+
+.dropdown_menu ul li{
+    border-bottom: 1px solid rgb(217, 215, 215);
+    width: 100%;
+   
+}

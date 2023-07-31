@@ -13,11 +13,11 @@ const [constFav,setConstFav] = useState([])
 
 const options = {
   method: 'GET',
-  url: 'http://localhost:1001/favorites/getfavorites',
+  url: 'https://spotify-server-e41z.onrender.com/favorites/getfavorites',
   params: {
   },
   headers: {
-    'authorization': "Bearer "+ localStorage.getItem('token')
+    'authorization': "Bearer "+ localStorage.getItem('Token')
 
   }
 }
@@ -25,8 +25,9 @@ const options = {
 useEffect(()=> {
 axios.request (options)
   .then ((res)=> {
+    console.log (res)
  
- setUsername(res.data[0].user.name)
+//  setUsername(res.data[1].user.name)
   const endResult = res.data.map(({songs})=> songs[0])
   setConstFav(endResult)
   setFavorites(endResult)})

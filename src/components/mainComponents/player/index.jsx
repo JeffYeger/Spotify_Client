@@ -74,7 +74,7 @@ const VideoPlayer = () => {
       "url": videoDetails.url
     }
     console.log (data)
-    axios.post('http://localhost:1001/song/addfavorite',data,{headers: {authorization: "Bearer " + localStorage.getItem('token')}},
+    axios.post('https://spotify-server-e41z.onrender.com/song/addfavorite',data,{headers: {authorization: "Bearer " + localStorage.getItem('Token')}},
  )
       .then((res) => console.log("!!!!" , res, "!!!!"))
       .catch((err) => console.log(err.message))

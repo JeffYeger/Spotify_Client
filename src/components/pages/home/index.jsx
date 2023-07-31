@@ -3,6 +3,7 @@ import axios from "axios";
 import SongCard from "../../songCard";
 import styles from './styles.module.css'
 import {BsSearch} from 'react-icons/bs'
+import AddToPlaylist from "../../addToPlaylist";
 
 function Home() {
 
@@ -51,6 +52,7 @@ function Home() {
   }
 
   return <div className={styles.home}>
+
 
 <div className={styles.search}>
      <form>

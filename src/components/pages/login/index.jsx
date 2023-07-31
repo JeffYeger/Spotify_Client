@@ -19,7 +19,7 @@ function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.post('http://localhost:1001/user/login', loginData)
+    await axios.post('https://spotify-server-e41z.onrender.com/user/login', loginData)
       .then((res) => {
         localStorage.setItem('Token', res.data.token);
         setUser(res.data.user);

@@ -13,11 +13,11 @@ const [constPlay,setConstPlay] = useState([])
 
 const options = {
   method: 'GET',
-  url: 'http://localhost:1001/playlist/getplaylist',
+  url: 'https://spotify-server-e41z.onrender.com/playlist/getplaylist',
   params: {
   },
   headers: {
-    'authorization': "Bearer "+ localStorage.getItem('token')
+    'authorization': "Bearer "+ localStorage.getItem('Token')
 
   }
 }
@@ -28,7 +28,6 @@ axios.request (options)
  
 //  setUsername(res.data[0].user.name)
   const endResult = res.data
-  console.log (endResult)
   setConstPlay(endResult)
   setPlaylists(endResult)})
   .catch ((error)=> {

@@ -16,7 +16,7 @@ function Register() {
 
    async function handleSubmit (e){
        e.preventDefault()
-    axios.post('http://localhost:1001/user/register',data)
+    axios.post('https://spotify-server-e41z.onrender.com/user/register',data)
      .then((res)=>navigate('/login'))
      .catch ((err)=> console.log (err))
      alert ("successful registration")

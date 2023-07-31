@@ -3,16 +3,14 @@ import styles from './styles.module.css'
 // import Popup from '../mainComponents/popup'
 // import '../mainComponents/popup/popup.css'
 import PlayerContext from '../../PlayerContext'
+import { IoIosAdd } from 'react-icons/io'
+import AddToPlaylist from '../addToPlaylist'
 
 function SongCard(props) {
 
-const {setVideoDetails} = useContext(PlayerContext)
+const {videoDetails,setVideoDetails} = useContext(PlayerContext)
 
-// const [showPopup,setShowPopup] = useState(false)
 
-// const togglePopup = ()=>{
-//     setShowPopup(!showPopup)
-// }
 
 
   return (
@@ -28,28 +26,9 @@ const {setVideoDetails} = useContext(PlayerContext)
 
   <button style={{backgroundColor:'rgb(95, 95, 95)', color:"white"}} onClick={() => setVideoDetails(props.video)}
       >Play</button>
+      <AddToPlaylist video = {props.video}/>
   
-  {/* <Popup show = {showPopup}  onClose={togglePopup}>
-    <div className={styles.embed}>
-    <h4>Title: {props.video.title}</h4>
-    <h4>Views: {props.video.views.toLocaleString()}</h4>
-
-    
   
-
-    <iframe
-  width="560"
-  height="315"
-  src={`https://www.youtube.com/embed/${props.video.id}`}
-  allowFullScreen
-></iframe>
-    </div>
-<div className={styles.popup_buttons}>
-    <button>Add to Playlist</button>
-    <button>Add to Favorites</button>
-    </div>
-  </Popup>
-     */}
     </div>
   )
 }
