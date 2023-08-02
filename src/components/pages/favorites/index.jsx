@@ -63,7 +63,7 @@ axios.request (options)
 
 <div className={styles.search}>
      <form>
-      <input style={{borderRadius:"30px"}} onChange={handleChange} type="search" placeholder="Search your favorites" />
+      <input style={{borderRadius:"10px"}} onChange={handleChange} type="search" placeholder="Search your favorites" />
       <button className={styles.searchbutton} onClick={handleSubmit}>Search</button>
     </form>
     </div>

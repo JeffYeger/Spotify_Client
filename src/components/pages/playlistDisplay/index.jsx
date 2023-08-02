@@ -35,13 +35,14 @@ const params = useParams()
 
     return (
         
-      
+      <div className={styles.container}>
         <div className={styles.titletext}>   <h2 className={styles.basictext}>Now Playing: {params.name} Playlist</h2> 
         <div className={styles.video_container} style={{ color: 'white' }}>
             
         {showSongs.map ((song)=> {
             return <SongCard key = {song.id} video = {song} />
         })}
+        </div>
         </div>
         </div>
     )

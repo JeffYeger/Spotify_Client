@@ -7,16 +7,55 @@
     padding: 10px;
     margin: 10px;
     overflow: hidden;
-    color: white;
+    color:#a3f7bf;
     font-size: 1rem;
     /* background-color: rgb(1, 108, 108); */
-    background-color: rgba(1, 135, 135, 0.5);
+    background-color:#393e46;
+    border: 2px solid #289e9a75;
+    border-style: ridge;
+
   }
+
+.songcard button {
+  background-color:#222831;
+  height: 35px;
+  width: 75px;
+  color:#29a19c;
+  border-radius: 5px;
+  border-style: none;
+  font-weight: 400;
+  cursor: pointer;
+
+}
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+}
+
+.favorite {
+  height: 30px;
+  width: 30px;
+  margin-bottom: 3px;
+}
+.favorite:hover{
+  background-color:#dac57831;
+  border-radius: 50%;
+transform: scale(1.1);
+
+}
+
+.songcard button:hover {
+  background-color: #29a19d;
+  color:#a3f7bf
+}
   
   .thumbnail {
-    height: 70%;
-    width: 80%;
+    height: 50%;
+    width: 60%;
     border-radius: 5px;
+    margin-bottom: 10px;
   }
   
 

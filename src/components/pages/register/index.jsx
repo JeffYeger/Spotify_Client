@@ -16,6 +16,7 @@ function Register() {
 
    async function handleSubmit (e){
        e.preventDefault()
+ 
     axios.post('https://spotify-server-e41z.onrender.com/user/register',data)
      .then((res)=>navigate('/login'))
      .catch ((err)=> console.log (err))
@@ -26,18 +27,20 @@ function Register() {
   
   return (
     <div>
-
-        <h3>Register</h3>
+<div className={styles.register_form}>
+        <h2>Register</h2>
 
 <form onSubmit={handleSubmit}>
     <label>Username:</label>
-    <input onChange={handleInput}  name='name' placeholder='Username' type="text" />
+    <input onChange={handleInput} required  name='name' placeholder='Username' type="text" />
     <label>Email:</label>
-    <input onChange={handleInput} name='email' placeholder='Email' type="email" />
+    <input onChange={handleInput} required name='email' placeholder='Email' type="email" />
     <label>Password:</label>
-    <input onChange={handleInput} type = 'password' name='password' placeholder='Password'  />
+    <input onChange={handleInput} required type = 'password' name='password' placeholder='Password'  />
   <button type='submit'>Register</button>
 </form>
+
+</div>
 
 
     </div>

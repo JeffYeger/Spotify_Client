@@ -16,10 +16,10 @@ function Body() {
     <Routes>
 
     <Route path = '/' element = {<Home/>}/>
-    <Route path = '/favorites' element = {<Favorites/>}/>
+    <Route path = '/favorites' element = {localStorage.getItem('Token') ? <Favorites/>  : <Login/>}/>
     <Route path = '/login' element = {<Login/>}/>
-    <Route path = '/register' element = {<Register/>}/>
-    <Route path = '/playlists' element = {<Playlists/>}/>
+   <Route path = '/register' element =  {<Register/>}/>
+    <Route path = '/playlists' element = {localStorage.getItem('Token') ? <Playlists/> : <Login/>}/>
     <Route path = '/playlists/:name' element = {<PlaylistDisplay/>}/>
     {/* <Route path = '/playlists' element = {<PlaylistCard/>}/> */}
     </Routes>

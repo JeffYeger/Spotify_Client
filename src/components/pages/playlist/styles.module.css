@@ -31,33 +31,33 @@
 
   
 input[type="search"] {
-    padding: 10px;
-    margin-top: 10px;
-    width: 20rem;
-    text-align: center;
-    font-size: larger;
-  }
-
-  .basictext{
-    color: white;
-  }
-
-  .search{
-   /* position: absolute; */
-   /* right: 0; */
-   /* padding-top: 2rem; */
-   /* border: solid yellow 10px; */
-   margin-top: 10px;
-
-  }
-
-  .searchbutton{
-   background-color: rgba(0, 0, 0, 0.5);
-   color:white;
-    font-weight: bold;
-    margin-left: 5px;
-    
-  } 
+   
+  height: 37px;
+  border: 1px solid #29a19c;
+       
+    }
+  
+    .basictext{
+      color: white;
+    }
+  
+   
+  
+    .searchbutton{
+     background: #393e46;
+     color:#a3f7bf;
+      font-weight: 400;
+      margin-left: 5px;
+      height: 37px;
+      width: 4.6rem;
+      border-radius: 3px;
+      border-style: none;
+    } 
+    .searchbutton:hover{
+      background-color: #a3f7bf;
+      color: #393e46;
+    }
+  
 
   .searchicon{
    background-color: white;

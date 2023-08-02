@@ -7,6 +7,7 @@ import AddToPlaylist from "../../addToPlaylist";
 
 function Home() {
 
+
   const defValue = 'Popular Songs'
   const [search,setSearch] = useState(defValue)
 
@@ -56,7 +57,7 @@ function Home() {
 
 <div className={styles.search}>
      <form>
-      <input style={{borderRadius:"30px"}} onChange={handleChange} type="search" placeholder="Search for your favorite artist" />
+      <input style={{borderRadius:"10px"}} onChange={handleChange} type="search" placeholder="Search for your favorite artist" />
       <button className={styles.searchbutton} onClick={handleSubmit}>Search</button>
     </form>
 

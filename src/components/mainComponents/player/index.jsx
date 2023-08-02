@@ -85,6 +85,7 @@ const VideoPlayer = () => {
 
   return (
     <div className={styles.player_container}>
+      <div className={styles.window}>
       <ReactPlayer
         ref={playerRef}
         url={`https://www.youtube.com/embed/${videoDetails.id}`}
@@ -94,7 +95,7 @@ const VideoPlayer = () => {
         width="100%"
         height="100%"
       />
-
+</div>
       <div className={styles.controls}>
         <TbPlayerTrackPrevFilled onClick={handleRewind} />
         <FaPlay onClick={handlePlay} />

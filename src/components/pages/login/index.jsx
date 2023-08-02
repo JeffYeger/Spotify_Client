@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useContext } from "react";
 import PlayerContext from "../../../PlayerContext";
+import styles from './styles.module.css'
 
 function Login() {
   const {user,setUser} = useContext (PlayerContext)
@@ -32,13 +33,18 @@ function Login() {
 
   return (
     <div>
-      <h3 style= {{color:'white'}}>Login</h3>
+
+      <div className={styles.login_form}>
+      <h2 style= {{color:'white'}}>Login</h2>
 
       <form onSubmit={handleSubmit}>
+        <label>Email</label>
         <input onChange={handleInput} name="email" type="text" placeholder="Email" />
+        <label>Password</label>
         <input onChange={handleInput} name="password" type="password" placeholder="Password" />
         <button type="submit">Login</button>
       </form>
+      </div>
     </div>
   );
 }

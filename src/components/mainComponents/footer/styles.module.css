@@ -1,9 +1,10 @@
 .footer{
-    background-image: linear-gradient(black,teal);
+   background-color:  #222831;
     height: 50px;
    width: 100vw;
    text-align: center;
    padding: 10px;
   color: white;
+  border-top: solid 1px #29a19c;
   }
   

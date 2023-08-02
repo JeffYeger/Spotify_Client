@@ -14,8 +14,8 @@ function Sidebar() {
         <Link className={styles.linktext} to='/'>Home</Link>
         <Link className={styles.linktext} to='/favorites'>Favorites</Link>
         <Link className={styles.linktext} to='/playlists'>Playlists</Link>
-        <Link className={styles.linktext} to='/login'>Login</Link>
-        <Link className={styles.linktext} to='/register'>Register</Link>
+   
+   
   
     
       {/* <div className={styles.player}> <VideoPlayer /> </div> */}

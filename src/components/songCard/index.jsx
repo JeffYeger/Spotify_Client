@@ -5,6 +5,7 @@ import styles from './styles.module.css'
 import PlayerContext from '../../PlayerContext'
 import { IoIosAdd } from 'react-icons/io'
 import AddToPlaylist from '../addToPlaylist'
+import { AiOutlineHeart, AiFillHeart } from "react-icons/ai"
 
 function SongCard(props) {
 
@@ -23,11 +24,12 @@ const {videoDetails,setVideoDetails} = useContext(PlayerContext)
   {/* <br /> */}
    ({props.video.duration_formatted})
 
-
-  <button style={{backgroundColor:'rgb(95, 95, 95)', color:"white"}} onClick={() => setVideoDetails(props.video)}
-      >Play</button>
-      <AddToPlaylist video = {props.video}/>
-  
+<div className={styles.controls}>
+<AiFillHeart className={styles.favorite} />
+  <button  onClick={() => setVideoDetails(props.video)}
+      >Play</button> <AddToPlaylist video = {props.video}/>
+      
+  </div>
   
     </div>
   )

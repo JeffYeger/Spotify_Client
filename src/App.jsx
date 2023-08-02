@@ -9,8 +9,7 @@ function App() {
   const [user,setUser] = useState ()
   const [favorites,setFavorites] = useState ([])
   const [playlists,setPlaylists] = useState ([])
-
-
+  
   return (
     <PlayerContext.Provider value={{playlists,setPlaylists, videoDetails, setVideoDetails, saveSong,setSaveSong,user,setUser,favorites,setFavorites }}>
       <div>
