@@ -25,7 +25,7 @@ const options = {
 useEffect(()=> {
 axios.request (options)
   .then ((res)=> {
-    console.log (res)
+    console.log (res.data)
  
 //  setUsername(res.data[1].user.name)
   const endResult = res.data.map(({songs})=> songs[0])
@@ -76,7 +76,7 @@ axios.request (options)
 
 
   {favorites.map((video,index)=>{
-    return <SongCard key = {index} video = {video}/>
+    return <SongCard delete = {true} key = {index} video = {video}/>
   })}
 </div>
 </div>

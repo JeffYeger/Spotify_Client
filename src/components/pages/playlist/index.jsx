@@ -29,7 +29,10 @@ axios.request (options)
 //  setUsername(res.data[0].user.name)
   const endResult = res.data
   setConstPlay(endResult)
-  setPlaylists(endResult)})
+  setPlaylists(endResult)
+
+})
+
   .catch ((error)=> {
    console.log (error)
   })
@@ -45,10 +48,10 @@ axios.request (options)
     if (search.length === 0){
       setPlaylists(constPlay)}
     else if (search.length > 0) {
-      const filteredPlaylist = playlist.filter((song) => {
+      const filteredPlaylist = playlists.filter((list) => {
        
-        if (song.title.toLowerCase().includes(search)) {
-          return song
+        if (list.name.toLowerCase().includes(search)) {
+          return list
         }
       })
   
@@ -58,9 +61,6 @@ axios.request (options)
     }
   }
 
-  const handleClick = () => {
-   return console.log ('clicked')
-  }
 
   return <div className={styles.home}>
 

@@ -85,6 +85,42 @@ input[type="search"] {
       
     }
   
+    .search form input {
+   
+      height: 37px;
+      border: 1px solid #29a19c;
+           
+        }
+      
+        .basictext{
+          color: white;
+        }
+      
+       
+      
+        .searchbutton{
+         background: #393e46;
+         color:#a3f7bf;
+          font-weight: 400;
+          margin-left: 5px;
+          height: 37px;
+          width: 4.6rem;
+          border-radius: 3px;
+          border-style: none;
+        } 
+        .searchbutton:hover{
+          background-color: #a3f7bf;
+          color: #393e46;
+        }
+
+        .delete {
+          height: 35px;
+          width: 35px;
+          color: #a3f7bf;
+          position: absolute;
+          left: 20px;
+          margin-top: 10px;
+        }
      
    
    
